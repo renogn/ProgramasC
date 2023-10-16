@@ -1,0 +1,35 @@
+//A partir de um inteiro positivo, digitado pelo teclado, calcular a soma de todos os números ímpares menores ou iguais ao número digitado.
+
+#include <stdio.h>
+
+int main()
+{
+    //declaração da variável n e inserção do valor pelo usuário
+    int n;
+
+    printf("Digite um inteiro positivo: \n");
+    scanf("%d", &n);
+
+    //verificação se o valor é positivo
+    while(n<0)
+    {
+        printf("Digite um valor valido!\n");
+        printf("Digite um inteiro positivo: \n");
+        scanf("%d", &n);
+    }
+
+    //soma de todos os números ímpares menores ou iguais a n
+    int soma = 0;
+    for(int i=0; i<=n; i++)
+    {
+        if(i%2 != 0)
+        {
+            soma = soma + i;
+        }
+    }
+
+    //resultado do programa
+    printf("Soma de todos os numeros ímpares menores ou iguais a %d: %d\n", n, soma);
+
+    return 0;
+}
