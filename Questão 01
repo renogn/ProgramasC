@@ -7,14 +7,14 @@ int main()
     //declaração da variável n e inserção do valor pelo usuário
     int n;
 
-    printf("Digite um inteiro positivo: \n");
+    printf("Digite um numero inteiro positivo: \n");
     scanf("%d", &n);
 
     //verificação se o valor é positivo
     while(n<0)
     {
-        printf("Digite um valor valido!\n");
-        printf("Digite um inteiro positivo: \n");
+        printf("Digite um numero valido!\n");
+        printf("Digite um numero inteiro positivo: \n");
         scanf("%d", &n);
     }
 
