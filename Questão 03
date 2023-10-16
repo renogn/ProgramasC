@@ -1,0 +1,42 @@
+//Calcular o fatorial de um número inteiro digitado pelo usuário. Obs.: n! = n × (n − 1) × (n − 2) × · · · × 3 × 2 × 1 com 0! = 1
+
+#include <stdio.h>
+
+int main()
+{
+    
+    //declaração da variável n e inserção do valor pelo usuário
+    int n;
+
+    printf("Digite um numero inteiro positivo: \n");
+    scanf("%d", &n);
+
+    //verificando se o valor é válido
+    while(n<0)
+    {
+        printf("Digite um numero valido!\n");
+        printf("Digite um numero inteiro positivo: \n");
+        scanf("%d", &n);
+    }
+
+    int fatorial = 1;
+
+    //verificando se o valor é diferente de 0. Caso seja, é calculado o fatorial do número
+    if(n == 0)
+    {
+      //resultado do programa quando n é igual a 0  
+      printf("Fatorial de %d = %d", n, fatorial);
+    }
+    else
+    {
+        for(int i=n; i>0; i--)
+        {
+            fatorial = fatorial * i;
+        }
+
+      //resultado do programa com n diferente de 0  
+      printf("Fatorial de %d = %d", n, fatorial);
+    }
+
+    return 0;
+}
