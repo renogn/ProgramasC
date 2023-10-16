@@ -4,11 +4,21 @@
 
 int main()
 {
+    //declaração da variável n e inserção do valor pelo usuário
     int n;
 
     printf("Digite um inteiro positivo: \n");
     scanf("%d", &n);
 
+    //verificação se o valor é positivo
+    while(n<0)
+    {
+        printf("Digite um valor valido!\n");
+        printf("Digite um inteiro positivo: \n");
+        scanf("%d", &n);
+    }
+
+    //soma de todos os números pares menores ou iguais a n
     int soma = 0;
     for(int i=0; i<=n; i++)
     {
@@ -18,6 +28,7 @@ int main()
         }
     }
 
+    //resultado do programa
     printf("Soma de todos os numeros pares menores ou iguais a %d: %d\n", n, soma);
 
     return 0;
