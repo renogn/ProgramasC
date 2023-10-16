@@ -1,0 +1,24 @@
+//A partir de um inteiro positivo, digitado pelo teclado, calcular a soma de todos os números pares menores ou iguais ao número digitado.
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+
+    printf("Digite um inteiro positivo: \n");
+    scanf("%d", &n);
+
+    int soma = 0;
+    for(int i=0; i<=n; i++)
+    {
+        if(i%2 == 0)
+        {
+            soma = soma + i;
+        }
+    }
+
+    printf("Soma de todos os numeros pares menores ou iguais a %d: %d\n", n, soma);
+
+    return 0;
+}
