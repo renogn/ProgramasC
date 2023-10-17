@@ -1,0 +1,81 @@
+//Criar uma calculadora que permite ao usuário realizar operações de soma, subtração, multiplicação e divisão.
+
+#include <stdio.h>
+
+int main()
+{
+    //declaração das variáveis
+    int aux;
+    float p1, p2, soma;
+    float f1, f2, produto;
+    float m, s, diferenca;
+    float d, div, quociente;
+
+    //escolha da operação pelo usuário
+    printf("Qual operacao deseja realizar: Soma(1), Subtracao(2), Multiplicacao(3) ou Divisao(4)? Digite o valor correspondente.\n");
+    scanf("%d", &aux);
+
+    while(aux<1 || aux>4)
+    {
+        printf("Digite um numero valido!\n");
+        printf("Qual operacao deseja realizar: Soma(1), Subtracao(2), Multiplicacao(3) ou Divisao(4)? Digite o valor correspondente.\n");
+        scanf("%d", &aux);
+    }
+
+    //baseado na escolha do usuário, o programa realizará uma das operações e mostrará o resultado
+    switch(aux)
+    {
+        //soma
+        case 1:
+            printf("Digite o valor da primeira parcela: \n");
+            scanf("%f", &p1);
+            printf("Digite o valor da segunda parcela: \n");
+            scanf("%f", &p2);
+
+            soma = p1 + p2;
+            printf("%.2f + %.2f = %.2f\n", p1, p2, soma);
+        break;
+
+        //subtração
+        case 2:
+            printf("Digite o valor do minuendo: \n");
+            scanf("%f", &m);
+            printf("Digite o valor do subtraendo: \n");
+            scanf("%f", &s);
+
+            diferenca = m - s;
+            printf("%.2f - %.2f = %.2f\n", m, s, diferenca);
+        break;
+
+        //multiplicação
+        case 3:
+            printf("Digite o valor do primeiro fator: \n");
+            scanf("%f", &f1);
+            printf("Digite o valor do segundo fator: \n");
+            scanf("%f", &f2);
+
+            produto = f1 * f2;
+            printf("%.2f * %.2f = %.2f\n", f1, f2, produto);
+        break;
+
+        //divisão
+        case 4:
+            printf("Digite o valor do dividendo: \n");
+            scanf("%f", &d);
+            printf("Digite o valor do divisor: \n");
+            scanf("%f", &div);
+
+            while(div == 0)
+            {
+                printf("O valor do divisor deve ser diferente de 0.\n");
+                printf("Digite o valor do divisor: \n");
+                scanf("%f", &div);
+            }
+
+            quociente = d / div;
+            printf("%.2f / %.2f = %.2f\n", d, div, quociente);
+        break;
+    }
+
+    return 0;
+}
