@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main()
+{
+    //perguntando ao usuário o tamanho do vetor
+    printf("Digite o tamanho do vetor:\n");
+    int n;
+    scanf("%d", &n);
+
+    //criando o vetor com o tamanho definido pelo usuário
+    int vetor[n];
+    
+    //leitura dos valores do vetor
+    printf("Digite os valores do vetor: ");
+
+    for(int i=0; i<n; i++)
+    {        
+        scanf("%d", &vetor[i]);
+    }
+
+    //variáveis para serem utilizadas como comparação
+    int maior=0, menor=1000000000;
+    
+    //comparando os valores do vetor para definir o maior
+    for(int i=0; i<n; i++)
+    {
+        if(vetor[i] > maior)
+            maior = vetor[i];    
+    }
+
+    //comparando os valores do vetor para definir o menor
+    for(int i=0; i<n; i++)
+    {
+        if(vetor[i] < menor)
+            menor = vetor[i];
+    }
+
+    //saída do programa
+    printf("O menor e o maior valor sao: %d e %d\n", menor, maior);
+
+    return 0;
+}
