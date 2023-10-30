@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main()
+{
+    //leitura dos valores da matriz
+    int matriz[3][3];
+
+    printf("Digite os valores de uma matriz 3x3 seguindo a ordem da primeira para a ultima linha e separados por espaco:\n");
+    
+    for(int i=0; i<3; i++)
+    {
+        for(int j=0; j<3; j++)
+        {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    //leitura do valor do escalar
+    int n;
+    printf("Digite um escalar para multiplicar a matriz:\n");
+    scanf("%d", &n);
+
+    //multiplicação dos valores da matriz pelo escalar
+    int matrizesc[3][3];
+    for(int i=0; i<3; i++)
+    {
+        for(int j=0; j<3; j++)
+        {
+            matrizesc[i][j] = n * matriz[i][j];
+        }
+    }
+
+    //saída do programa
+    for(int i=0; i<3; i++)
+    {
+        for(int j=0; j<3; j++)
+        {
+            printf("%d ", matrizesc[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
