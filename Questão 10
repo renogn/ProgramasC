@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main()
+{
+    //definição das variáveis e leitura do tamanho das matrizes
+    int n, m;
+    printf("Para realizar a soma entre duas matrizes, e necessario que as matrizes possuam mesmo numero de linhas e colunas!\n");
+    printf("Digite o numero de linhas e colunas das matrizes separados por espaco:\n");
+    scanf("%d %d", &n, &m);
+
+    //definição das matrizes de acordo com o número de linhas e colunas digitado pelo usuário
+    int matriz1[n][m];
+    int matriz2[n][m];
+
+    //leitura dos valores da primeira matriz
+    printf("Digite os valores da primeira matriz separados por espaco:\n");
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m; j++)
+        {
+            scanf("%d", &matriz1[i][j]);
+        }
+    }
+
+    //leitura dos valores da segunda matriz
+    printf("Digite os valores da segunda matriz separados por espaco:\n");
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m; j++)
+        {
+            scanf("%d", &matriz2[i][j]);
+        }
+    }
+
+    //soma das duas matrizes
+    int matrizsoma[n][m];
+    
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m; j++)
+        {
+            matrizsoma[i][j] = matriz1[i][j] + matriz2[i][j];
+        }
+    }
+    
+    printf("A matriz resultante da soma entre as duas matrizes:\n");
+
+    //saída do programa com a matriz resultante da soma
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m; j++)
+        {
+            printf("%d ", matrizsoma[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
