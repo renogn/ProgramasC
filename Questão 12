@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main()
+{
+    //determinando o tamanho do vetor
+    int n;
+    printf("Digite o tamanho do vetor:\n");
+    scanf("%d", &n);
+
+    int vetor[n];
+
+    //leitura dos valores do vetor
+    printf("Digite os valores do vetor separados por espaco:\n");
+
+    for(int i=0; i<n; i++)
+    {
+        scanf("%d", &vetor[i]);
+    }
+
+    //divisão para determinar se o numero é par ou impar, realizando a contagem de cada um
+    int aux=0, aux2=0;
+    for(int i=0; i<n; i++)
+    {
+        if(vetor[i]%2 == 0)
+        {
+            aux++;
+        }
+        else
+        {
+            aux2++;
+        }
+    }
+
+    //saída do programa
+    printf("Numero de pares e impares: %d e %d\n", aux, aux2);
+
+    return 0;
+}
