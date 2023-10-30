@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+    //declaração e leitura das variáveis
+    int n, lim;
+    
+    printf("Digite um numero para visualizar sua tabela de multiplicacao:\n");
+    scanf("%d", &n);
+    printf("Digite um numero como limite da tabela:\n");
+    scanf("%d", &lim);
+
+    //multiplicação do número de 0 até o número definido pelo usuário e saída dos resultados
+    for(int i=0; i<=lim; i++)
+    {
+        int resultado;
+        resultado = n * i;
+        printf("%d * %d = %d\n", n, i, resultado);
+    }
+    
+    return 0;
+}
