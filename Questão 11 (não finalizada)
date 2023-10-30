@@ -1,0 +1,73 @@
+#include <stdio.h>
+
+int main()
+{
+    //definição das variáveis e leitura do tamanho das matrizes
+    int m, n, p, q;
+    printf("Para realizar a multiplicacao entre duas matrizes e necessario que o numero de colunas da primeira matriz seja igual ao numero de linhas da segunda matriz!\n");
+    printf("Digite o numero de linhas e colunas da primeira matriz separados por espaco:\n");
+    scanf("%d %d", &m, &n);
+    printf("Digite o numero de linhas e colunas da segunda matriz separados por espaco:\n");
+    scanf("%d %d", &p, &q);
+
+    //definição das matrizes de acordo com o número de linhas e colunas digitado pelo usuário
+    int matriz1[m][n];
+    int matriz2[p][q];
+
+    if(n != p)
+    {
+        printf("Nao e possivel realizar a multiplicacao entre essas duas matrizes!\n");
+    }
+    else{
+        //leitura dos valores da primeira matriz
+        printf("Digite os valores da primeira matriz separados por espaco:\n");
+        for(int i=0; i<m; i++)
+        {
+            for(int j=0; j<n; j++)
+            {
+                scanf("%d", &matriz1[i][j]);
+            }
+        }
+
+        //leitura dos valores da segunda matriz
+        printf("Digite os valores da segunda matriz separados por espaco:\n");
+        for(int i=0; i<p; i++)
+        {
+            for(int j=0; j<q; j++)
+            {
+                scanf("%d", &matriz2[i][j]);
+            }
+        }
+
+        int matrizx[n][q];
+        int soma = 0;
+        int i, j, k;
+        
+        for(i=0; i<m; i++)
+        {            
+            for(j=0; j<q; j++)
+            {
+                for(k=0; k<p; k++)  
+                {
+                    soma = soma + matriz1[i][k] * matriz2[k][j];
+                }
+            }
+            matrizx[i][j] = soma;
+            soma = 0;      
+        }
+
+        printf("A matriz resultante da multiplicacao entre as duas matrizes:\n");
+
+        //saída do programa com a matriz resultante da soma
+        for(int i=0; i<m; i++)
+        {
+            for(int j=0; j<q; j++)
+            {
+                printf("%d ", matrizx[i][j]);
+            }
+            printf("\n");
+        }
+    }
+    
+    return 0;
+}
