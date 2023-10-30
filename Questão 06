@@ -2,11 +2,13 @@
 
 int main()
 {
+    //declaração e leitura da variável n
     printf("Digite um numero inteiro positivo:\n");
     
     int n;
     scanf("%d", &n);
 
+    //verificando se o número é positivo
     while(n<0)
     {
         printf("Digite um numero valido!\n");
@@ -14,8 +16,10 @@ int main()
         scanf("%d", &n);
     }
 
+    //dividindo o numero digitado pelo usuário para determinar se é primo ou não
     for(int i=2; i<n; i++)
     {
+        //caso não seja primo, basta que uma divisão seja exata. Então o programa apresenta a informação na tela e encerra
         if(n%i == 0)
         {
             printf("%d nao e um numero primo\n", n);
@@ -23,6 +27,7 @@ int main()
         }
     }
 
+    //caso seja primo, apresenta a informação na tela
     printf("%d e um numero primo\n", n);
 
     return 0;
