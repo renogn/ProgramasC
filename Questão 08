@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main()
+{
+    //solicitando ao usuário o tamanho do vetor
+    printf("Digite a quantidade de numeros a ser somados:\n");
+    int n;
+    scanf("%d", &n);
+    
+    //criando o vetor de tamanho definido pelo usuário
+    int vetor[n];
+
+    //leitura dos valores do vetor
+    printf("Digite os valores da soma: ");
+
+    for(int i=0; i<n; i++)
+    {        
+        scanf("%d", &vetor[i]);
+    }
+
+    //soma dos valores
+    int soma = 0;
+    for(int i=0; i<n; i++)
+    {
+        soma = soma + vetor[i];
+    }
+
+    //saída do programa
+    printf("Soma dos valores do vetor = %d\n", soma);
+
+    return 0;
+}
