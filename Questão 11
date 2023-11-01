@@ -20,7 +20,7 @@ int main()
     }
     else{
         //leitura dos valores da primeira matriz
-        printf("Digite os valores da primeira matriz separados por espaco:\n");
+        printf("Digite os valores da primeira matriz seguindo a ordem da primeira para a ultima linha e separados por espaco:\n");
         for(int i=0; i<m; i++)
         {
             for(int j=0; j<n; j++)
@@ -30,7 +30,7 @@ int main()
         }
 
         //leitura dos valores da segunda matriz
-        printf("Digite os valores da segunda matriz separados por espaco:\n");
+        printf("Digite os valores da segunda matriz seguindo a ordem da primeira para a ultima linha e separados por espaco:\n");
         for(int i=0; i<p; i++)
         {
             for(int j=0; j<q; j++)
@@ -39,21 +39,19 @@ int main()
             }
         }
 
-        int matrizx[n][q];
-        int soma = 0;
-        int i, j, k;
+        //calculo da multiplicação e soma dos correspondentes elementos das matrizes
+        int matrizx[m][q];
         
-        for(i=0; i<m; i++)
+        for(int i=0; i<m; i++)
         {            
-            for(j=0; j<q; j++)
+            for(int j=0; j<q; j++)
             {
-                for(k=0; k<p; k++)  
+                matrizx[i][j] = 0;
+                for(int aux=0; aux<p; aux++)  
                 {
-                    soma = soma + matriz1[i][k] * matriz2[k][j];
+                    matrizx[i][j] = matrizx[i][j] + matriz1[i][aux] * matriz2[aux][j];
                 }
-            }
-            matrizx[i][j] = soma;
-            soma = 0;      
+            }      
         }
 
         printf("A matriz resultante da multiplicacao entre as duas matrizes:\n");
