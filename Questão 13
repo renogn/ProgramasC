@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main()
+{
+    //declaração e leitura do tamanho da matriz
+    int m, n;
+    printf("Digite o numero de linhas e colunas de uma matriz quadrada:\n");
+    scanf("%d %d", &m, &n);
+
+    //verificando se a matriz é quadrada
+    while(m != n)
+    {
+        printf("A matriz deve ser quadrada, ou seja, mesmo numero de linhas e colunas!\n");
+        printf("Digite o numero de linhas e colunas de uma matriz quadrada:\n");
+        scanf("%d %d", &m, &n);
+    }
+
+    //leitura dos valores da matriz
+    int matriz[m][n];
+    
+    printf("Digite os valores da matriz seguindo a ordem da primeira para a ultima linha e separados por espaco:\n");
+    for(int i=0; i<m; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    //cálculo da diagonal principal e saída do resultado
+    int somaprincipal=0;
+
+    for(int i=0; i<m; i++)
+    {
+        somaprincipal = somaprincipal + matriz[i][i];
+    }
+
+    printf("Soma dos elementos da diagonal principal = %d\n", somaprincipal);
+
+    //cálculo da diagonal secundária e saída do resultado
+    int somasecundaria=0;
+
+    for(int i=0; i<m; i++)
+    {
+        somasecundaria = somasecundaria + matriz[i][n-i-1];
+    }
+
+    printf("Soma dos elementos da diagonal secundaria = %d\n", somasecundaria);
+
+    return 0;
+}
